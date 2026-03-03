@@ -1,5 +1,5 @@
 import { useEffect, useState, FormEvent } from 'react';
-import { fetchAdminTickets, authHeaders } from '../services/api';
+import { fetchAdminTickets, authHeaders, API_URL } from '../services/api';
 import './AdminProjects.css'; // Reusing standard modal styles
 
 export interface Attachment {
@@ -87,7 +87,7 @@ export default function AdminTickets() {
         if (!window.confirm('Are you sure you want to delete this ticket?')) return;
 
         try {
-            const response = await fetch(`/api/tickets/${id}`, {
+            const response = await fetch(`${API_URL}/tickets/${id}`, {
                 method: 'DELETE',
                 headers: authHeaders()
             });
@@ -187,7 +187,7 @@ export default function AdminTickets() {
             const headers = authHeaders() as Record<string, string>;
             delete headers['Content-Type'];
 
-            const response = await fetch('/api/upload', {
+            const response = await fetch(`${API_URL}/upload`, {
                 method: 'POST',
                 headers,
                 body: fileData
@@ -216,7 +216,7 @@ export default function AdminTickets() {
         e.preventDefault();
 
         try {
-            const url = editingId ? `/api/tickets/${editingId}` : '/api/tickets';
+            const url = editingId ? `${API_URL}/tickets/${editingId}` : `${API_URL}/tickets`;
             const method = editingId ? 'PUT' : 'POST';
 
             const response = await fetch(url, {

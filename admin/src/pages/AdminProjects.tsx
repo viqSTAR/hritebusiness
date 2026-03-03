@@ -1,5 +1,5 @@
 import { useEffect, useState, FormEvent } from 'react';
-import { fetchAdminProjects, authHeaders } from '../services/api';
+import { fetchAdminProjects, authHeaders, API_URL } from '../services/api';
 import './AdminProjects.css';
 
 interface Project {
@@ -55,7 +55,7 @@ const AdminProjects = () => {
         if (!window.confirm('Are you sure you want to delete this project?')) return;
 
         try {
-            const response = await fetch(`/api/projects/${id}`, {
+            const response = await fetch(`${API_URL}/projects/${id}`, {
                 method: 'DELETE',
                 headers: authHeaders()
             });
@@ -117,7 +117,7 @@ const AdminProjects = () => {
             const headers: any = authHeaders();
             delete headers['Content-Type'];
 
-            const response = await fetch('/api/upload', {
+            const response = await fetch(`${API_URL}/upload`, {
                 method: 'POST',
                 headers,
                 body: fileData
@@ -145,7 +145,7 @@ const AdminProjects = () => {
         };
 
         try {
-            const url = editingId ? `/api/projects/${editingId}` : '/api/projects';
+            const url = editingId ? `${API_URL}/projects/${editingId}` : `${API_URL}/projects`;
             const method = editingId ? 'PUT' : 'POST';
 
             const response = await fetch(url, {
