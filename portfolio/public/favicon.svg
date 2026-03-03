@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Black rounded base square -->
+  <rect width="100" height="100" rx="22" fill="#1C1E21"/>
+  <!-- White cutout in top-right corner — creates the negative-space notch -->
+  <rect x="44" y="4" width="52" height="52" rx="18" fill="white"/>
+</svg>
