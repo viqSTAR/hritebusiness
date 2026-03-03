@@ -1,4 +1,4 @@
-const API_URL = '/api'; // Using Vite proxy to localhost:5000
+const API_URL = 'https://hritebusiness.vercel.app/api';
 
 export const authHeaders = (): HeadersInit => {
     const userInfo = localStorage.getItem('adminInfo');
