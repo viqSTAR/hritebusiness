@@ -2265,9 +2265,15 @@ header.header-scrolled .header-center a.nav-active {
   header.header-scrolled .header-left {
     width: 100%;
     justify-content: space-between;
-    padding: 0 16px 0 24px;
+    padding: 0 24px;
     align-items: center;
-    /* Ensure exact vertical alignment */
+    border-radius: var(--radius-full);
+  }
+
+  /* Make sure the black background covers the entire left container (which holds the menu too on mobile) */
+  header.header-top .header-left {
+    background: #1C1E21;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
   header.header-top .header-right,
@@ -2293,6 +2299,12 @@ header.header-scrolled .header-center a.nav-active {
   header.header-top .header-center {
     background: #1C1E21;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Make sure text inside the dark menu is white */
+    color: #ffffff;
+  }
+
+  header.header-top .header-center a {
+    color: #ffffff;
   }
 
   header.header-scrolled .header-center {
