@@ -1,0 +1,310 @@
+.contact-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.contact-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(48px);
+    -webkit-backdrop-filter: blur(48px);
+    border-radius: var(--radius-xl);
+    padding: 48px;
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.1),
+        inset 0 1px 1px rgba(255, 255, 255, 0.9),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    animation: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.contact-modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+}
+
+.contact-modal-close:hover {
+    color: var(--text);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.contact-modal-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-modal-header h2 {
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.contact-modal-header p {
+    font-size: 1rem;
+    color: var(--text-sub);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.modal-back-btn {
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    color: var(--text-sub);
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.modal-back-btn:hover {
+    color: var(--text);
+}
+
+.contact-modal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.contact-modal-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    width: 100%;
+}
+
+.contact-modal-card.highlight-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-modal-card:hover {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.contact-modal-card.highlight-card:hover {
+    background: #ffffff;
+    box-shadow: 0 12px 24px rgba(255, 92, 0, 0.08);
+    /* slight orange tint for highlight */
+}
+
+.contact-modal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.contact-modal-icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+}
+
+.contact-modal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-modal-info h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--text);
+}
+
+.contact-modal-info span {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+}
+
+/* Form Styles */
+.contact-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-sub);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text);
+    transition: all 0.2s;
+    outline: none;
+}
+
+.form-group select option {
+    background: #ffffff;
+    color: #111827;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    background: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-dim);
+}
+
+.form-submit-btn {
+    margin-top: 8px;
+    width: 100%;
+    padding: 16px;
+    font-size: 1.05rem;
+}
+
+/* Success State Styles */
+.contact-modal-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    padding: 32px 0 16px;
+    animation: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.success-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.08),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+    color: #10B981;
+    /* Premium Emerald Green */
+    margin-bottom: 12px;
+}
+
+.success-icon-wrapper svg {
+    animation: drawCheckmark 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.contact-modal-success h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.contact-modal-success p {
+    color: var(--text-sub);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.success-close-btn {
+    width: 100%;
+}
+
+@keyframes drawCheckmark {
+    0% {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+    }
+
+    100% {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
