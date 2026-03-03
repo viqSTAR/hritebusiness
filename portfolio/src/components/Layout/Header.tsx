@@ -32,6 +32,13 @@ const Header: React.FC = () => {
                     <div className="logo-mark"></div>
                     <div className="logo-text">HRITE</div>
                 </Link>
+                <button
+                    className={`hamburger ${open ? 'open' : ''}`}
+                    onClick={() => setOpen(!open)}
+                    aria-label="Toggle menu"
+                >
+                    <span /><span /><span />
+                </button>
             </div>
 
             <nav className={`header-center ${open ? 'nav-open' : ''}`}>
@@ -76,13 +83,6 @@ const Header: React.FC = () => {
                     }}
                 >
                     Start a Project
-                </button>
-                <button
-                    className={`hamburger ${open ? 'open' : ''}`}
-                    onClick={() => setOpen(!open)}
-                    aria-label="Toggle menu"
-                >
-                    <span /><span /><span />
                 </button>
             </div>
         </header>

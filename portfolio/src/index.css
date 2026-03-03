@@ -711,13 +711,7 @@ header.header-scrolled .header-center a.nav-active {
   }
 
   .hero-art-pills {
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
-    width: 100%;
-    height: 300px;
-    margin-top: 40px;
+    display: none;
   }
 }
 
@@ -2266,6 +2260,21 @@ header.header-scrolled .header-center a.nav-active {
     display: flex;
   }
 
+  /* Mobile Header Container Override */
+  header.header-top .header-left,
+  header.header-scrolled .header-left {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 16px 0 24px;
+    align-items: center;
+    /* Ensure exact vertical alignment */
+  }
+
+  header.header-top .header-right,
+  header.header-scrolled .header-right {
+    display: none;
+  }
+
   /* Mobile Header Override */
   header.header-top .header-center,
   header.header-scrolled .header-center {
@@ -2368,6 +2377,17 @@ header.header-scrolled .header-center a.nav-active {
 
   .bento-card-new {
     min-height: 250px;
+  }
+
+  .gifs-rows {
+    /* Stack the "Software We Build" horizontally scrolling rows on mobile if they were side by side */
+    flex-direction: column;
+  }
+
+  /* Make sure the Professional Services layout (which uses contact-layout) stacks */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .form-card {
