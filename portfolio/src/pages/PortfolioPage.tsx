@@ -22,7 +22,12 @@ const PortfolioPage: React.FC = () => {
             try {
                 const response = await fetch('https://hritebusiness.vercel.app/api/projects');
                 const data = await response.json();
-                setAllProjects(data);
+                if (response.ok && Array.isArray(data)) {
+                    setAllProjects(data);
+                } else {
+                    console.error("API returned an error or non-array:", data);
+                    setAllProjects([]);
+                }
                 setLoading(false);
             } catch (error) {
                 console.error("Failed to fetch projects:", error);

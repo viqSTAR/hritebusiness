@@ -24,7 +24,12 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
             try {
                 const response = await fetch('https://hritebusiness.vercel.app/api/projects/featured');
                 const data = await response.json();
-                setProjects(data);
+                if (response.ok && Array.isArray(data)) {
+                    setProjects(data);
+                } else {
+                    console.error("API returned an error or non-array:", data);
+                    setProjects([]);
+                }
                 setLoading(false);
             } catch (error) {
                 console.error("Failed to fetch featured projects:", error);
