@@ -793,6 +793,30 @@ header.header-scrolled .header-center a.nav-active {
   max-width: 400px;
 }
 
+@media (max-width: 768px) {
+
+  /* Stack the title and description in the Professional Services section */
+  .bento-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .bento-intro {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .services-bento-container {
+    padding: 40px 24px;
+    border-radius: var(--radius-lg);
+  }
+
+  .bento-header {
+    margin-bottom: 32px;
+  }
+}
+
 .bento-grid-new {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
