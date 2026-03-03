@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchAdminLeads, authHeaders } from '../services/api';
+import { fetchAdminLeads, authHeaders, API_URL } from '../services/api';
 
 interface Lead {
     _id: string;
@@ -34,7 +34,7 @@ const AdminLeads = () => {
 
     const updateStatus = async (id: string, newStatus: string) => {
         try {
-            const response = await fetch(`/api/leads/${id}/status`, {
+            const response = await fetch(`${API_URL}/leads/${id}/status`, {
                 method: 'PUT',
                 headers: authHeaders(),
                 body: JSON.stringify({ status: newStatus }),
@@ -54,7 +54,7 @@ const AdminLeads = () => {
         if (!window.confirm('Are you sure you want to delete this lead?')) return;
 
         try {
-            const response = await fetch(`/api/leads/${id}`, {
+            const response = await fetch(`${API_URL}/leads/${id}`, {
                 method: 'DELETE',
                 headers: authHeaders()
             });
