@@ -2266,33 +2266,75 @@ header.header-scrolled .header-center a.nav-active {
     display: flex;
   }
 
-  nav {
+  /* Mobile Header Override */
+  header.header-top .header-center,
+  header.header-scrolled .header-center {
     display: none;
     position: absolute;
     top: 64px;
-    left: 0;
-    right: 0;
-    background: rgba(8, 8, 8, 0.98);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 20px;
+    left: 12px;
+    right: 12px;
+    border-radius: var(--radius-md);
+    padding: 24px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    height: auto;
+    z-index: 1000;
   }
 
-  nav.nav-open {
-    display: block;
+  header.header-top .header-center {
+    background: #1C1E21;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  nav ul {
+  header.header-scrolled .header-center {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  header.header-top .header-center.nav-open,
+  header.header-scrolled .header-center.nav-open {
+    display: flex;
     flex-direction: column;
-    gap: 4px;
+  }
+
+  header .header-center ul {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 8px;
+  }
+
+  header .header-center a {
+    text-align: center;
+    padding: 14px;
+    font-size: 1.1rem;
+  }
+
+  .nav-cta-btn {
+    display: none !important;
+    /* hidden on mobile due to overlap */
   }
 
   .section {
     padding: 80px 20px;
   }
 
-  h1 {
-    font-size: 2.8rem;
+  h1,
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 10vw, 3.8rem);
     letter-spacing: -1px;
+    line-height: 1.05;
+  }
+
+  .hero-card {
+    padding: 40px 24px;
+    border-radius: 24px;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    margin-bottom: 32px;
   }
 
   .hero-ctas {
@@ -2928,5 +2970,35 @@ header.header-scrolled .header-center a.nav-active {
 
   .wf-stat:last-child {
     border-bottom: none;
+  }
+}
+
+/* ── Mobile Utilities ────────────────────────────────────── */
+.mobile-only-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only-cta {
+    display: block;
+    margin-top: 12px;
+  }
+
+  .nav-cta-btn-mobile {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--radius-full);
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 92, 0, 0.2);
+  }
+
+  .nav-cta-btn-mobile:active {
+    transform: translateY(2px);
   }
 }

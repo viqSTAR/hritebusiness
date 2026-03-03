@@ -53,6 +53,17 @@ const Header: React.FC = () => {
                             </li>
                         )
                     )}
+                    <li className="mobile-only-cta">
+                        <button
+                            className="nav-cta-btn-mobile"
+                            onClick={() => {
+                                setOpen(false);
+                                openContactModal();
+                            }}
+                        >
+                            Start a Project
+                        </button>
+                    </li>
                 </ul>
             </nav>
 
