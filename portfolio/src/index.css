@@ -2260,6 +2260,15 @@ header.header-scrolled .header-center a.nav-active {
     display: flex;
   }
 
+  /* Make the hamburger lines white when inside the black top header, and dark when scrolled */
+  header.header-top .hamburger span {
+    background: #ffffff;
+  }
+
+  header.header-scrolled .hamburger span {
+    background: var(--text);
+  }
+
   /* Mobile Header Container Override */
   header.header-top .header-left,
   header.header-scrolled .header-left {
