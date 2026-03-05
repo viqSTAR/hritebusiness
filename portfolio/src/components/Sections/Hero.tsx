@@ -11,9 +11,7 @@ const Hero: React.FC = () => {
                 <div className="hero-content">
                     <h1>
                         Building powerful<br />
-                        digital experiences for<br />
-                        modern<br />
-                        businesses
+                        digital experiences
                     </h1>
                     <p className="hero-sub">
                         At HRITE, we merge creativity and strategy to craft digital
