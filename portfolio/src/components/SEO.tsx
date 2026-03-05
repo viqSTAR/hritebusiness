@@ -41,6 +41,22 @@ const SEO: React.FC<SEOProps> = ({
             <meta name="twitter:title" content={siteTitle} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={ogImage} />
+
+            {/* JSON-LD Schema (LLM SEO) */}
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    "name": "Hrite",
+                    "url": "https://hrite.in/",
+                    "logo": "https://hrite.in/favicon.svg",
+                    "description": "Hrite is a modern web development and design agency helping startups build powerful websites and digital products.",
+                    "sameAs": [
+                        "https://twitter.com/hritehq",
+                        "https://www.linkedin.com/company/hrite"
+                    ]
+                })}
+            </script>
         </Helmet>
     );
 };
