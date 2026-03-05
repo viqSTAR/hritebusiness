@@ -10,10 +10,10 @@ const Hero: React.FC = () => {
                 {/* Text Content */}
                 <div className="hero-content">
                     <h1>
-                        Design for<br />
-                        ambitious<br />
-                        software<br />
-                        companies
+                        Building powerful<br />
+                        digital experiences for<br />
+                        modern<br />
+                        businesses
                     </h1>
                     <p className="hero-sub">
                         At HRITE, we merge creativity and strategy to craft digital
