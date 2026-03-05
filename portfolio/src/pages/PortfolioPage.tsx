@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../components/SEO';
 
 const FILTERS = ['All', 'Ecommerce', 'Real Estate', 'Mobile', 'MERN'];
 
@@ -20,7 +21,7 @@ const PortfolioPage: React.FC = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await fetch('https://hritebusiness.vercel.app/api/projects');
+                const response = await fetch('https://hrite.in/api/projects');
                 const data = await response.json();
                 if (response.ok && Array.isArray(data)) {
                     setAllProjects(data);
@@ -41,6 +42,11 @@ const PortfolioPage: React.FC = () => {
 
     return (
         <div className="page-wrapper" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+            <SEO
+                title="Cases & Works – Our Portfolio"
+                description="Explore our latest web development and design projects. From e-commerce to real estate, see how Hrite delivers digital excellence."
+                canonical="https://hrite.in/portfolio"
+            />
             <div className="portfolio-header" style={{ marginBottom: '40px' }}>
                 <div>
                     <span className="pill-tag" style={{ marginBottom: '16px' }}>Cases & Works</span>

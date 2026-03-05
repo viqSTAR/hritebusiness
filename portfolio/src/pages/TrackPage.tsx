@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import './TrackPage.css';
 
 /* ─── Data & Types ─────────────────────────────────────────── */
@@ -32,7 +33,7 @@ const STAGES = ['Discovery', 'Design', 'Development', 'Testing', 'Deployment'];
 /* ─── API Service ─────────────────────── */
 const fetchTicketData = async (ticketId: string): Promise<TicketData | null> => {
     try {
-        const response = await fetch(`https://hritebusiness.vercel.app/api/tickets/track/${ticketId.toUpperCase()}`);
+        const response = await fetch(`https://hrite.in/api/tickets/track/${ticketId.toUpperCase()}`);
         if (!response.ok) {
             return null;
         }
@@ -79,6 +80,11 @@ const TrackPage: React.FC = () => {
 
     return (
         <div className="tp-page">
+            <SEO
+                title="Track Project – Real-time Updates"
+                description="Enter your ticket ID to track your project's progress in real-time. Stay updated with Hrite's development process."
+                canonical="https://hrite.in/track"
+            />
             {/* ── Search Hero ────────────────────────────────────── */}
             <div className={`tp-hero ${!ticket ? 'tp-hero-centered' : ''}`}>
                 <div className="tp-hero-inner">

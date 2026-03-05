@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 
 const PrivacyPage: React.FC = () => {
     useEffect(() => {
@@ -7,6 +8,11 @@ const PrivacyPage: React.FC = () => {
 
     return (
         <div className="page-wrapper" style={{ display: 'flex', flexDirection: 'column' }}>
+            <SEO
+                title="Privacy Policy"
+                description="Hrite's privacy policy. Learn how we handle your data and protect your privacy."
+                canonical="https://hrite.in/privacy"
+            />
             <div style={{ maxWidth: '800px', margin: '0 auto', padding: '60px 20px', flex: 1, width: '100%' }}>
                 <h1 style={{ fontSize: '3rem', marginBottom: '16px', letterSpacing: '-0.03em' }}>Privacy Policy</h1>
                 <p style={{ fontSize: '1.2rem', color: 'var(--text-sub)', marginBottom: '60px', lineHeight: 1.6 }}>

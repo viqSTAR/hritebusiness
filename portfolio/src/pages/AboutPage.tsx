@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import abstractLiquid from '../assets/about_glass_liquid.png';
 
 const AboutPage: React.FC = () => {
@@ -8,6 +9,11 @@ const AboutPage: React.FC = () => {
 
     return (
         <div className="page-wrapper about-page" style={{ padding: '120px 20px 60px', overflow: 'hidden' }}>
+            <SEO
+                title="About Us – The Hrite Philosophy"
+                description="Learn about Hrite's mission to blend cutting-edge engineering with exquisite design. We build the future of the web for ambitious companies."
+                canonical="https://hrite.in/about"
+            />
             <div className="bento-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
                 {/* Header Row */}

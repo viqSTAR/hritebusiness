@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 
 const TermsPage: React.FC = () => {
     useEffect(() => {
@@ -7,6 +8,11 @@ const TermsPage: React.FC = () => {
 
     return (
         <div className="page-wrapper" style={{ display: 'flex', flexDirection: 'column' }}>
+            <SEO
+                title="Terms & Conditions"
+                description="Terms and conditions for using Hrite's services."
+                canonical="https://hrite.in/terms"
+            />
             <div style={{ maxWidth: '800px', margin: '0 auto', padding: '60px 20px', flex: 1, width: '100%' }}>
                 <h1 style={{ fontSize: '3rem', marginBottom: '16px', letterSpacing: '-0.03em' }}>Terms & Conditions</h1>
                 <p style={{ fontSize: '1.2rem', color: 'var(--text-sub)', marginBottom: '60px', lineHeight: 1.6 }}>

@@ -1,10 +1,16 @@
 import React from 'react';
 import { useModal } from '../context/ModalContext';
+import SEO from '../components/SEO';
 
 const ContactPage: React.FC = () => {
     const { openContactModal } = useModal();
     return (
         <div className="page-wrapper section-padding" style={{ textAlign: 'center' }}>
+            <SEO
+                title="Contact Us – Start Your Project"
+                description="Ready to build something extraordinary? Contact Hrite today for web development, design, and digital marketing solutions."
+                canonical="https://hrite.in/contact"
+            />
             <span className="mono-tag">// CONNECT WITH US</span>
             <h2>Let's Build the Future.</h2>
             <p style={{ color: 'var(--text-muted)', maxWidth: '520px', margin: '0 auto 40px' }}>
